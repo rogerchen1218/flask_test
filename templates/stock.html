@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>庫存查詢</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>庫存查詢</h1>
+
+        <!-- 篩選器 -->
+        <form method="GET" action="/stock" class="mb-4">
+            <div class="form-row">
+                <div class="col">
+                    <input type="text" class="form-control" name="commodity" placeholder="商品" value="{{ request.args.get('commodity', '') }}">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" name="spec" placeholder="規格" value="{{ request.args.get('spec', '') }}">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" name="storage" placeholder="倉位" value="{{ request.args.get('storage', '') }}">
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn btn-primary">搜尋</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- 庫存列表 -->
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>商品</th>
+                    <th>規格</th>
+                    <th>倉位</th>
+                    <th>剩餘庫存</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in stock_records %}
+                <tr>
+                    <td>{{ record[0] }}</td>
+                    <td>{{ record[1] }}</td>
+                    <td>{{ record[2] }}</td>
+                    <td>{{ record[3] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/" class="btn btn-secondary">回首頁</a>
+    </div>
+</body>
+</html>

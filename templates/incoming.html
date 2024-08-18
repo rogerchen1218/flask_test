@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>進貨管理</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>進貨管理</h1>
+        <form action="/incoming" method="POST">
+            <div class="form-group">
+                <label for="commodity">商品</label>
+                <input type="text" class="form-control" id="commodity" name="commodity" required>
+            </div>
+            <div class="form-group">
+                <label for="spec">規格</label>
+                <input type="text" class="form-control" id="spec" name="spec" required>
+            </div>
+            <div class="form-group">
+                <label for="quantity">數量</label>
+                <input type="number" class="form-control" id="quantity" name="quantity" required>
+            </div>
+            <div class="form-group">
+                <label for="price">單價</label>
+                <input type="text" class="form-control" id="price" name="price" required>
+            </div>
+            <div class="form-group">
+                <label for="supplier">廠商</label>
+                <input type="text" class="form-control" id="supplier" name="supplier" required>
+            </div>
+            <div class="form-group">
+                <label for="date">日期</label>
+                <input type="date" class="form-control" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="storage">倉位</label>
+                <input type="text" class="form-control" id="storage" name="storage" required>
+            </div>
+            <div class="form-group">
+                <label for="ps">備註</label>
+                <textarea class="form-control" id="ps" name="ps"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">提交</button>
+        </form>
+        <a href="/" class="btn btn-secondary mt-3">回首頁</a>
+    </div>
+</body>
+</html>

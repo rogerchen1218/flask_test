@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>出貨管理</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>出貨管理</h1>
+        <form action="/outgoing" method="POST">
+            <div class="form-group">
+                <label for="commodity_sale">出貨品項</label>
+                <input type="text" class="form-control" id="commodity_sale" name="commodity_sale" required>
+            </div>
+            <div class="form-group">
+                <label for="spec_sale">規格</label>
+                <input type="text" class="form-control" id="spec_sale" name="spec_sale" required>
+            </div>
+            <div class="form-group">
+                <label for="quantity_sale">數量</label>
+                <input type="number" class="form-control" id="quantity_sale" name="quantity_sale" required>
+            </div>
+            <div class="form-group">
+                <label for="price_sale">單價</label>
+                <input type="text" class="form-control" id="price_sale" name="price_sale" required>
+            </div>
+            <div class="form-group">
+                <label for="storage_sale">倉位</label>
+                <input type="text" class="form-control" id="storage_sale" name="storage_sale" required>
+            </div>
+            <div class="form-group">
+                <label for="reserve_sale">預定單</label>
+                <select class="form-control" id="reserve_sale" name="reserve_sale" required>
+                    <option value="是">是</option>
+                    <option value="否">否</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="buyer">客戶</label>
+                <input type="text" class="form-control" id="buyer" name="buyer" required>
+            </div>
+            <button type="submit" class="btn btn-primary">提交</button>
+        </form>
+        <a href="/" class="btn btn-secondary mt-3">回首頁</a>
+    </div>
+</body>
+</html>
